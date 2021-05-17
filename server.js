@@ -2,7 +2,9 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const routes = require('./routes')
+const fileupload = require('express-fileupload')
 const app = express();
+app.use(fileupload())
 app.use(cors()); 
 app.use('/', routes)
 const port = process.env.PORT || 5000;

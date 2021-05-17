@@ -15,9 +15,11 @@ function App(){
         setloading(true)
         const formdata = new FormData();
         formdata.append('file',file);
+        console.log(file)
         try{
             const res = await axios.post('/upload', formdata)
             let text = res.data
+            
             setloading(false)
             setimagetext(text)
             setable(true)
